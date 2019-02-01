@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "Open Sans";
 	src: local("Open Sans"), url("../fonts/OpenSans-Regular.woff2") format("woff2"),
-		url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
+		url("../fonts/OpenSans-Regular.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -9,8 +9,16 @@
 @font-face {
 	font-family: "Open Sans";
 	src: local("Open Sans"), url("../fonts/OpenSans-Bold.woff2") format("woff2"),
-		url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
+		url("../fonts/OpenSans-Bold.woff") format("woff");
 	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: local("Open Sans"), url("../fonts/OpenSans-Light.woff2") format("woff2"),
+		url("../fonts/OpenSans-Light.woff") format("woff");
+	font-weight: 300;
 	font-style: normal;
 }
 
@@ -32,16 +40,17 @@ body {
 	font-size: 1rem;
 	line-height: 1.2;
 	font-family: "Open Sans", "Tahoma", sans-serif;
+	letter-spacing: 0.05em;
 }
 
 .header {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-	padding: 2em 0;
-  min-height: 100vh;
-  max-height: 960px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 2em 0 4.66em;
+	min-height: 100vh;
+	max-height: 960px;
 
 	background-color: rgba(10, 14, 52, 0.9);
 	color: #ffffff;
@@ -55,8 +64,8 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
-  background-position: center top;
-  background-size: cover;
+	background-position: center top;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-image: url("../images/football_767.jpg");
 }
@@ -71,8 +80,7 @@ body {
 .main-title {
 	display: flex;
 	flex-direction: column;
-  margin: 40% auto 25%;
-  margin: 40% auto auto;
+	margin: 40% auto 0;
 
 	text-transform: uppercase;
 	font-size: 8.75vw;
@@ -88,31 +96,84 @@ body {
 }
 
 .container {
-  padding-left: 20px;
-  padding-right: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.app-link-wrapper {
+	margin-top: auto;
 }
 
 .app-link {
-  display: flex;
-  height: 2.33em;
-  justify-content: center;
-  align-items: center;
-  margin: 1em 0;
+	display: flex;
+	align-items: center;
+	margin: 1rem auto;
+	padding: 0.57em 10em;
+	max-width: 35em;
 
-  background-color: #5e42b0;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 14121991px;
+	font-size: 0.533em;
+	text-transform: uppercase;
+	background-color: #5e42b0;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 14121991px;
+}
+
+.app-link svg {
+	fill: #ffffff;
+	width: 2.5em;
+	height: 3em;
+	margin-right: 1em;
+}
+
+.app-link span,
+.app-link strong {
+	display: block;
+	padding: 0.25em 0;
+}
+
+.app-link.apple::before {
+	background-image: url("../images/apple_logo_black.svg");
+}
+
+.section h2 {
+  color: #e7e7e7;
 }
 
 @media (min-width: 641px) {
 	html {
 		font-size: 100%;
-  }
+	}
 
 	.main-title {
-		margin: 20.83% 8.5% auto;
+		margin: 20.83% 8.5%;
 	}
+
+	.app-link-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+
+	.app-link {
+		flex: 1;
+		margin: 1em;
+		padding: 0.5em 3.86em;
+		max-width: 310px;
+
+		font-size: 14px;
+	}
+
+	.app-link span {
+		font-weight: 300;
+  }
+  
+  .app-link span, .app-link strong {
+    padding: 0;
+  }
+
+  .line-inner {
+    width: 57.94;
+  }
 }
 
 @media (min-width: 961px) {
@@ -125,13 +186,17 @@ body {
 	}
 
 	.main-title {
-		margin: auto 8.5%;
+    margin: auto 8.5%;
+    font-size: 5.75vw;
 	}
-}
 
-@media (min-width: 1025px) {
-  .main-title {
-		font-size: 90px;
+	.app-link {
+		padding: 1em;
+		justify-content: center;
+	}
+
+	.app-link svg {
+		font-size: 16px;
 	}
 }
 
@@ -140,10 +205,17 @@ body {
 		max-width: 1560px;
 		margin-left: auto;
 		margin-right: auto;
-	}
+  }
+  
+	.main-title {
+		font-size: 90px;
+  }
 
+  .app-link-wrapper {
+    width: 100%;
+  }
+  
 	.header::before {
 		background-image: url("../images/football_1920.jpg");
 	}
-
 }
