@@ -45,6 +45,7 @@ body {
 }
 
 .page {
+  min-width: 320px;
   overflow: hidden;
 }
 
@@ -94,11 +95,7 @@ body {
 	font-size: 8.75vw;
 }
 
-.main-title span:first-child {
-	align-self: flex-start;
-}
-
-.main-title span:last-child {
+.main-title-gap {
 	align-self: flex-end;
 	padding-left: 1.5em;
 }
@@ -140,11 +137,9 @@ body {
   fill: #ffffff;
 }
 
-.app-link span,
-.app-link strong {
+.app-link-strong {
+  font-weight: bold;
   display: block;
-  
-	padding: 0.25em 0;
 }
 
 .app-link.apple::before {
@@ -159,23 +154,6 @@ body {
 	font-size: 50px;
 }
 
-.section-title::after {
-  content: "";
-  
-	margin: 8px auto -43px;
-
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
-.footboller::after {	
-  display: block;
-
-	width: 192px;
-  height: 281px;
-  
-	background-image: url("../images/footballer_192.png");
-}
 
 .line-article {
 	counter-reset: line;
@@ -200,7 +178,7 @@ body {
   background-color: #0a0e34;
 }
 
-.line h3 {
+.line-title {
   position: relative;
   
 	padding-left: 1em;
@@ -238,7 +216,7 @@ body {
 	background-color: #5e42b0;
 }
 
-.line p {
+.line-text {
 	margin: 0;
 }
 
@@ -279,27 +257,19 @@ body {
 		padding: 0.5em 3.86em;
 		max-width: 310px;
 
-		font-size: 14px;
+    font-size: 14px;
+    font-weight: 300;
 	}
-
-	.app-link span {
-		font-weight: 300;
-	}
-
-	.app-link span,
-	.app-link strong {
-		padding: 0;
-  }
   
   .line {
     padding: 38px 0;
   }
 
-	.line h3 {
+	.line-title {
 		font-size: 32px;
 	}
 
-  .line p {
+  .line-text {
     line-height: 1.75;
   }
 
@@ -336,7 +306,7 @@ body {
     font-size: 80px;
 	}
 
-	.footboller::after {
+	.footboller {
     position: absolute;
     top: 27px;
     right: calc(100% - 37px);
@@ -344,8 +314,6 @@ body {
 		width: 497px;
 		height: 699px;
     margin: 0;
-    
-		background-image: url("../images/footballer_497.png");
   }
   
   .basketboller::after {
@@ -392,7 +360,7 @@ body {
     width: calc(50% - 50px);
   }
 
-	.line h3 {
+	.line-title {
 		font-size: 36px;
   }
 
@@ -401,7 +369,7 @@ body {
     margin-bottom: 40px;
   }
 
-	.footboller::after {
+	.footboller {
     top: -69px;
     right: calc(100% + 50px);
 		width: 566px;
