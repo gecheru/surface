@@ -68,8 +68,9 @@
               ATHLETS
             </h2>
             <picture class="footboller">
-              <source srcset="images/footballer_192.png">
-              <source media="(min-width: 641px)" srcset="images/footballer_497.png">
+              <source media="(max-width: 640px)" srcset="images/footballer_192.png">
+              <source media="(min-width: 641px) and (max-width: 960px)" srcset="images/footballer_497.png">
+              <source media="(min-width: 961px)" srcset="images/footballer_566.png">
               <img src="images/footballer_566.png" alt="footballer">
             </picture>
           </header>
@@ -134,9 +135,15 @@
       <div class="container">
         <div class="line-inner">
           <header class="line-column">
-            <h2 class="section-title basketboller">
+            <h2 class="section-title">
               Players
             </h2>
+            <picture class="basketballer">
+              <source media="(max-width: 640px)" srcset="images/basketballer_302.png">
+              <source media="(min-width: 641px) and (max-width: 960px)" srcset="images/basketballer_690.png">
+              <source media="(min-width: 961px)" srcset="images/basketballer_991.png">
+              <img src="images/basketballer_991.png" alt="basketballer">
+            </picture>
           </header>
         </div>
       </div>
@@ -191,6 +198,41 @@
       </div>
 
     </section>
+
+    <section class="hero">
+      <picture class="hero-image">
+        <source media="(max-width: 640px)" srcset="images/be-active_640.jpg">
+        <source media="(min-width: 641px) and (max-width: 960px)" srcset="images/be-active_960.jpg">
+        <source media="(min-width: 961px)" srcset="images/be-active_1024.jpg">
+        <img src="images/be-active_1024.jpg" alt="be active">
+      </picture>
+      <div class="hero-text-wrapper">
+        <h2 class="hero-title">
+          Be active
+        </h2>
+        <p class="hero-text">
+          Post videos with your skills, Like and follow others to be more popular.
+        </p>
+      </div>
+    </section>
+
+    <section class="hero">
+      <picture class="hero-image">
+        <source media="(max-width: 640px)" srcset="images/be-active_640.jpg">
+        <source media="(min-width: 641px) and (max-width: 960px)" srcset="images/be-active_960.jpg">
+        <source media="(min-width: 961px)" srcset="images/be-active_1024.jpg">
+        <img src="images/be-active_1024.jpg" alt="be active">
+      </picture>
+      <div class="hero-text-wrapper">
+        <h2 class="hero-title">
+          Be active
+        </h2>
+        <p class="hero-text">
+          Post videos with your skills, Like and follow others to be more popular.
+        </p>
+      </div>
+    </section>
+
   </div>
 
 </body>

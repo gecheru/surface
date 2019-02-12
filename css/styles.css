@@ -45,7 +45,7 @@ body {
 }
 
 .page {
-  min-width: 320px;
+  min-width: 300px;
   overflow: hidden;
 }
 
@@ -151,7 +151,8 @@ body {
 	margin-bottom: 0.3em;
 
 	color: #e7e7e7;
-	font-size: 50px;
+  font-size: 50px;
+  text-transform: uppercase;
 }
 
 
@@ -228,13 +229,31 @@ body {
   color: #5e42b0;
 }
 
-.basketboller::after {
+.hero-image {
   display: block;
+}
 
-  width: 302px;
-  height: 248px;
+.hero-image img {
+  max-width: 100%;
+}
 
-  background-image: url("../images/basketballer_302.png");
+.hero-title {
+  margin-top: 1em;
+  margin-bottom: 0.54em;
+
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #e7e7e7;
+}
+
+.hero-text-wrapper {
+  position: relative;
+  padding: 0 20px 80px;
+}
+
+.hero-text {
+  margin: 0;
+  font-size: 16px;
 }
 
 @media (min-width: 641px) {
@@ -290,7 +309,8 @@ body {
 	}
 
 	.line-column {
-		width: 62.93%;
+    width: 62.93%;
+    position: relative;
 	}
 
 	.is-right {
@@ -308,24 +328,23 @@ body {
 
 	.footboller {
     position: absolute;
-    top: 27px;
+    top: 97px;
     right: calc(100% - 37px);
-
-		width: 497px;
-		height: 699px;
-    margin: 0;
   }
   
-  .basketboller::after {
+  .basketballer {
     position: absolute;
-    top: -21px;
-    left: calc(100% - 139px);
-  
-    width: 690px;
-    height: 565px;
-    margin: 0;
-  
-    background-image: url("../images/basketballer_690.png");
+    top: 37px;
+    left: calc(100% - 18vw);
+  }
+
+  .hero-title {
+    font-size: 80px;
+    margin-bottom: 0.25em;
+  }
+
+  .hero-text {
+    font-size: 24px;
   }
 }
 
@@ -370,12 +389,8 @@ body {
   }
 
 	.footboller {
-    top: -69px;
+    top: 30px;
     right: calc(100% + 50px);
-		width: 566px;
-    height: 908px;
-    
-		background-image: url("../images/footballer_566.png");
   }
   
   .line-inner {
@@ -383,16 +398,10 @@ body {
     padding-right: 0;
   }
 
-  .basketboller::after {
+  .basketballer {
     position: absolute;
-    top: -73px;
+    top: 20px;
     left: calc(100% - 150px);
-  
-    width: 991px;
-    height: 815px;
-    margin: 0;
-  
-    background-image: url("../images/basketballer_991.png");
   }
 }
 
