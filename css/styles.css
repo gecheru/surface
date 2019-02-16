@@ -42,57 +42,73 @@ body {
 	font-family: "Open Sans", "Tahoma", sans-serif;
 	letter-spacing: 0.05em;
 	color: #000000;
+	counter-reset: hero;
 }
 
 .page {
-  min-width: 300px;
-  overflow: hidden;
+	min-width: 300px;
+	overflow: hidden;
 }
 
-.header {
-  position: relative;
-  
+.header, .footer {
+	position: relative;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 2em 0 4.66em;
-	min-height: 100vh;
+  height: 100vh;
+  min-height: 568px;
 	max-height: 960px;
 
 	background-color: rgba(10, 14, 52, 0.9);
 	color: #ffffff;
 }
 
-.header::before {
-  content: "";
-  
+.header {
+  padding: 2em 0 4.66em;
+}
+
+.header::before, .footer::before {
+	content: "";
+
 	position: absolute;
 	z-index: -1;
 	top: 0;
 	right: 0;
 	bottom: 0;
-  left: 0;
-  
+	left: 0;
+
 	background-position: center top;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url("../images/football_767.jpg");
+}
+
+.top::before {
+  background-image: url("../images/football_767.jpg");
+}
+
+.bottom::before {
+  background-image: url("../images/game_767.jpg");
+}
+
+.footer {
+  padding: 4.66em 0 2em;
 }
 
 .logo-container {
 	margin: 0 auto;
 
-	width: 41.5625vw;
+	width: 41.5625vmin;
 	max-width: 205px;
 }
 
 .main-title {
 	display: flex;
 	flex-direction: column;
-	margin: 40% auto 0;
+	margin: 40vmin auto;
 
 	text-transform: uppercase;
-	font-size: 8.75vw;
+	font-size: 8.75vmin;
 }
 
 .main-title-gap {
@@ -132,14 +148,14 @@ body {
 .app-link svg {
 	width: 2.5em;
 	height: 3em;
-  margin-right: 1em;
-  
-  fill: #ffffff;
+	margin-right: 1em;
+
+	fill: #ffffff;
 }
 
 .app-link-strong {
-  font-weight: bold;
-  display: block;
+	font-weight: bold;
+	display: block;
 }
 
 .app-link.apple::before {
@@ -147,22 +163,21 @@ body {
 }
 
 .section-title {
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
+	margin-top: 10px;
+	margin-bottom: 10px;
 
 	color: #e7e7e7;
-  font-size: 50px;
-  text-transform: uppercase;
+	font-size: 50px;
+	text-transform: uppercase;
 }
-
 
 .line-article {
 	counter-reset: line;
 }
 
 .line {
-  padding: 55px 0;
-  
+	padding: 55px 0;
+
 	counter-increment: line;
 }
 
@@ -176,12 +191,12 @@ body {
 }
 
 .line-dark {
-  background-color: #0a0e34;
+	background-color: #0a0e34;
 }
 
 .line-title {
-  position: relative;
-  
+	position: relative;
+
 	padding-left: 1em;
 	margin-top: 0;
 	margin-bottom: 20px;
@@ -208,8 +223,8 @@ body {
 }
 
 .counter::after {
-  content: "";
-  
+	content: "";
+
 	display: block;
 	height: 4px;
 
@@ -226,34 +241,84 @@ body {
 }
 
 .line-dark .counter::before {
-  color: #5e42b0;
+	color: #5e42b0;
 }
 
 .hero-image {
-  display: block;
+	display: block;
+	font-size: 0;
 }
 
 .hero-image img {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 .hero-title {
-  margin-top: 1em;
-  margin-bottom: 0.54em;
+  position: relative;
 
-  font-size: 28px;
-  text-transform: uppercase;
-  color: #e7e7e7;
+	margin-top: 0;
+	margin-bottom: 15px;
+
+	font-size: 28px;
+	text-transform: uppercase;
+	color: #e7e7e7;
 }
 
 .hero-text-wrapper {
-  position: relative;
-  padding: 0 20px 80px;
+	padding: 25px 20px 75px;
 }
 
 .hero-text {
-  margin: 0;
-  font-size: 16px;
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.25;
+}
+
+.footboller,
+.basketballer {
+	display: flex;
+	justify-content: center;
+}
+
+.hero {
+	counter-increment: hero;
+}
+
+.hero-counter {
+	position: absolute;
+	left: 0;
+	top: -83px;
+
+	display: flex;
+	width: 70px;
+	height: 70px;
+
+	background-color: #5e42b0;
+}
+
+.hero-counter-text {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-counter-text::before {
+	content: counter(hero, decimal-leading-zero);
+
+  font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.hero-counter-text::after {
+  content: '';
+
+  display: block;
+  height: 4px;
+  border-radius: 14121991px;
+
+  background-color: #ffffff;
+  opacity: 0.3;
 }
 
 @media (min-width: 641px) {
@@ -276,41 +341,41 @@ body {
 		padding: 0.5em 3.86em;
 		max-width: 310px;
 
-    font-size: 14px;
-    font-weight: 300;
+		font-size: 14px;
+		font-weight: 300;
 	}
-  
-  .line {
-    padding: 38px 0;
-  }
+
+	.line {
+		padding: 38px 0 33px;
+	}
 
 	.line-title {
 		font-size: 32px;
 	}
 
-  .line-text {
-    line-height: 1.75;
-  }
+	.line-text {
+		line-height: 1.75;
+	}
 
 	.counter::before {
 		font-size: 18px;
-  }
-  
-  .counter::after {
-    height: 5px;
-    margin-top: 0.1em;
-  }
+	}
+
+	.counter::after {
+		height: 5px;
+		margin-top: 0.1em;
+	}
 
 	.line-inner {
-    display: flex;
-    
+		display: flex;
+
 		padding-left: 12px;
 		padding-right: 12px;
 	}
 
 	.line-column {
-    width: 62.93%;
-    position: relative;
+		width: 62.93%;
+		position: relative;
 	}
 
 	.is-right {
@@ -318,33 +383,52 @@ body {
 	}
 
 	.section-title {
-    position: relative;
+		position: relative;
 
-    margin-bottom: 0;
-    margin-top: 60px;
+		margin-bottom: 0;
+		margin-top: 65px;
 
-    font-size: 80px;
+		font-size: 80px;
 	}
 
 	.footboller {
-    position: absolute;
-    top: 97px;
-    right: calc(100% - 37px);
+		position: absolute;
+		top: 97px;
+		right: calc(100% - 37px);
+	}
+
+	.basketballer {
+		position: absolute;
+		top: 37px;
+		left: calc(100% - 18vw);
+	}
+
+  .hero-text-wrapper {
+    padding: 70px 30px 75px;
+  }
+
+	.hero-title {
+		font-size: 80px;
+		margin-bottom: 0.25em;
+	}
+
+	.hero-text {
+		font-size: 24px;
   }
   
-  .basketballer {
-    position: absolute;
-    top: 37px;
-    left: calc(100% - 18vw);
-  }
+  .hero-counter {
+    top: -151px;
 
-  .hero-title {
-    font-size: 80px;
-    margin-bottom: 0.25em;
+    width: 116px;
+    height: 116px;
   }
-
-  .hero-text {
+  
+  .hero-counter-text::before {
     font-size: 24px;
+  }
+  
+  .hero-counter-text::after {
+    height: 5px;
   }
 }
 
@@ -353,8 +437,12 @@ body {
 		font-size: 125%;
 	}
 
-	.header::before {
+	.top::before {
 		background-image: url("../images/football_1280.jpg");
+  }
+  
+	.bottom::before {
+		background-image: url("../images/game_1280.jpg");
 	}
 
 	.main-title {
@@ -369,39 +457,95 @@ body {
 
 	.app-link svg {
 		font-size: 16px;
-  }
-  
-  .line-column {
-    width: 50%;
-  }
+	}
 
-  .line-column.is-right {
-    width: calc(50% - 50px);
-  }
+	.line {
+		padding: 55px 0 50px;
+	}
+
+	.line-column {
+		width: 50%;
+	}
+
+	.line-column.is-right {
+		width: calc(50% - 50px);
+	}
 
 	.line-title {
 		font-size: 36px;
-  }
+	}
 
-  .section-title {
-    margin-top: 98px;
-    margin-bottom: 40px;
-  }
+	.section-title {
+		margin-top: 98px;
+		margin-bottom: 40px;
+	}
+
+	.is-right .line-title {
+		margin-bottom: 10px;
+	}
 
 	.footboller {
-    top: 30px;
-    right: calc(100% + 50px);
+		top: 30px;
+		right: calc(100% + 50px);
+	}
+
+	.line-inner {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.basketballer {
+		position: absolute;
+		top: 20px;
+		left: calc(100% - 150px);
   }
   
-  .line-inner {
-    padding-left: 0;
-    padding-right: 0;
+  .hero {
+    display: flex;
   }
 
-  .basketballer {
-    position: absolute;
-    top: 20px;
-    left: calc(100% - 150px);
+  .hero-image, .hero-text-wrapper {
+    width: 50%;
+  }
+
+  .hero-image {
+    text-align: right;
+  }
+
+  .hero-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px 0 70px;
+  }
+
+  .hero-counter {
+    top: 50%;
+    left: -70px;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-title {
+    margin-bottom: 9%;
+
+    font-size: 4.166vw;
+  }
+
+  .is-right {
+    justify-content: flex-end;
+  }
+
+  .is-right .hero-image{
+    order: 1;
+    text-align: left;
+  }
+
+  .is-right .hero-text-wrapper {
+    padding: 0 70px 0 20px;
+  }
+
+  .is-right .hero-counter {
+    left: calc(100% + 70px);
   }
 }
 
@@ -421,7 +565,34 @@ body {
 		width: 100%;
 	}
 
-	.header::before {
+	.top::before {
 		background-image: url("../images/football_1920.jpg");
-	}
+  }
+
+	.bottom::before {
+		background-image: url("../images/game_1920.jpg");
+  }
+  
+  .hero-text-wrapper {
+    padding: 0 20px 0 130px;
+    max-width: 780px;
+  }
+
+  .hero-counter {
+    width: 168px;
+    height: 155px;
+    left: -130px;
+  }
+
+  .is-right .hero-text-wrapper {
+    padding: 0 130px 0 20px;
+  }
+
+  .is-right .hero-counter {
+    left: calc(100% + 130px);
+  }
+
+  .hero-title {
+    font-size: 80px;
+  }
 }
