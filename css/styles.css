@@ -61,12 +61,15 @@ body {
 	min-height: 568px;
 	max-height: 960px;
 
-	background-color: rgba(10, 14, 52, 0.9);
+  background-position: center top;
+	background-size: cover;
+  background-repeat: no-repeat;
 	color: #ffffff;
 }
 
 .header {
-	padding: 2em 0 4.66em;
+  padding: 2em 0 4.66em;
+  background-image: url("../images/football_767.jpg");
 }
 
 .header::before,
@@ -74,30 +77,23 @@ body {
 	content: "";
 
 	position: absolute;
-	z-index: -1;
+	z-index: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 
-	background-position: center top;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.top::before {
-	background-image: url("../images/football_767.jpg");
-}
-
-.bottom::before {
-	background-image: url("../images/game_767.jpg");
+  background-color: rgba(10, 14, 52, 0.9);
 }
 
 .footer {
-	padding: 100px 0 20px;
+  padding: 100px 0 20px;
+  background-image: url("../images/game_767.jpg");
 }
 
 .logo-container {
+  position: relative;
+
 	margin: 0 auto;
 
 	width: 41.5625vmin;
@@ -105,6 +101,8 @@ body {
 }
 
 .main-title {
+  position: relative;
+
 	display: flex;
 	flex-direction: column;
 	margin: 40vmin auto;
@@ -124,6 +122,7 @@ body {
 }
 
 .app-link-wrapper {
+  position: relative;
 	margin-top: auto;
 }
 
@@ -324,7 +323,8 @@ body {
 }
 
 .footer-title-wrapper {
-	text-align: center;
+  text-align: center;
+  position: relative;
 }
 
 .footer-title-wrapper::before {
@@ -359,7 +359,7 @@ body {
 	font-weight: normal;
 }
 
-.bottom .app-link-wrapper {
+.footer .app-link-wrapper {
   margin-top: 0;
 }
 
@@ -378,13 +378,20 @@ body {
 	}
 
 	.app-link {
-		flex: 1;
+    flex: 1;
+    justify-content: center;
 		margin: 1em;
-		padding: 0.5em 3.86em;
+		padding: 1em;
 		max-width: 310px;
 
 		font-size: 14px;
 		font-weight: 300;
+  }
+  
+	.app-link svg {
+    margin-right: 1.56em;
+
+		font-size: 16px;
 	}
 
 	.line {
@@ -492,26 +499,17 @@ body {
 		font-size: 36px;
 	}
 
-	.top::before {
+	.header {
 		background-image: url("../images/football_1280.jpg");
 	}
 
-	.bottom::before {
+	.footer {
 		background-image: url("../images/game_1280.jpg");
 	}
 
 	.main-title {
 		margin: auto 8.5%;
 		font-size: 5.75vw;
-	}
-
-	.app-link {
-		padding: 1em;
-		justify-content: center;
-	}
-
-	.app-link svg {
-		font-size: 16px;
 	}
 
 	.line {
@@ -634,11 +632,11 @@ body {
 		width: 100%;
 	}
 
-	.top::before {
+	.header {
 		background-image: url("../images/football_1920.jpg");
 	}
 
-	.bottom::before {
+	.footer {
 		background-image: url("../images/game_1920.jpg");
 	}
 
